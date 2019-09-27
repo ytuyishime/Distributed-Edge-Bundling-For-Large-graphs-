@@ -1,6 +1,6 @@
-EXE_NAME = output 
+EXE_NAME = cpu_fdeb 
 
-CC = g++
+CC = mpic++
 CXX = $(CC)
 
 
@@ -11,20 +11,20 @@ CFLAGS += -DDEBUG
 #CFLAGS += -DTIMING
 
 OBJ_DIR = .
-CFILES = kdtree.cpp 
+CFILES = main.cpp gldraw.cpp point.cpp line.cpp
 
 OBJECT_FILES = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(CFILES))
 
-all: $(OBJECT_FILES) .depend
+all: $(OBJECT_FILES)
 	$(CXX) -g -o ${EXE_NAME} $(OBJECT_FILES) $(LIB) $(LDFLAGS)
 
 .depend: $(CFLIES)
 	$(CXX) -MM -E $(CFLAGS) $(INCLUDE) $(CFILES) > .depend	
 	
 $(OBJ_DIR)/%.o: %.cpp
-	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
+	$(CC) -c -o $@ $<
 
-include .depend
+#include .depend
 
 clean:
 	rm -f core.* $(OBJ_DIR)/*.o $(EXE_NAME) .depend

@@ -1,0 +1,9 @@
+#!/bin/sh
+#SBATCH --ntasks=32
+#SBATCH --mem-per-cpu=1024
+#SBATCH --time=00:15:00
+#SBATCH --error=/work/[bigweather/tuyishimey/job.%J.err
+#SBATCH --output=/work/bigweather/tuyishimey/job.%J.out
+
+module load compiler/gcc/8.2 openmpi/2.1
+mpirun /home/bigweather/tuyishimey/mpiprogram
