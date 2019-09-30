@@ -1,4 +1,9 @@
 # Distributed-Edge-Bundling-For-Large-graphs-
-My Research Thesis
+***********************************************************************************
+****  Author: Yves Tuyishime
+****  School: University of Nebraska Lincoln 
+************************************************************************************
 
-Please Follow the Make File on how to use this code. More detail will be included soon. 
+**Goal:
+
+
